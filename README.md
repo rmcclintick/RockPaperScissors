@@ -4,4 +4,5 @@ Javascript application for playing a single game of Rock, Paper, Scissors as out
 https://www.theodinproject.com/lessons/foundations-rock-paper-scissors
 
 
-Played fully in the console. Each game is best of 5 rounds.
+Playable at https://rmcclintick.github.io/RockPaperScissors/
+
