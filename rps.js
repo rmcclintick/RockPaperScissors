@@ -67,8 +67,10 @@ function game()
 
 const buttons = document.querySelectorAll('.playerChoice');
 const output = document.querySelector('.round-output');
+const score = document.querySelector('.score');
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
         output.textContent = playRound(e.target.textContent, computerPlay());
+        score.textContent = `Your score: ${userScore} \tComputer's score: ${computerScore}`;
     });
 });
