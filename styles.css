@@ -17,6 +17,9 @@
 
 .player-choice {
     margin: 4px;
+    background-color: #faf3dd;
+    border-color: #5E6472;
+    font-size: 18px;
 }
 
 h3 {
@@ -28,4 +31,9 @@ h3 {
 .info {
     background-color: #faf3dd;
     padding: 8px;
+}
+
+.end-game {
+    background-color: #5E6472;
+    color: white;
 }

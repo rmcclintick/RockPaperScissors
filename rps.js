@@ -68,9 +68,35 @@ function game()
 const buttons = document.querySelectorAll('.player-choice');
 const output = document.querySelector('.round-output');
 const score = document.querySelector('.score');
+const endGame = document.querySelector('.end-game');
+let gameOver = false;
+
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
-        output.textContent = playRound(e.target.textContent, computerPlay());
-        score.textContent = `Your score: ${userScore} \tComputer's score: ${computerScore}`;
+        if (!gameOver)
+        {
+            output.textContent = playRound(e.target.textContent, computerPlay());
+            score.textContent = `Your score: ${userScore} \tComputer's score: ${computerScore}`;
+        }
+        if (gameOver)
+        {
+            userScore = 0;
+            computerScore = 0;
+            output.textContent = playRound(e.target.textContent, computerPlay());
+            score.textContent = `Your score: ${userScore} \tComputer's score: ${computerScore}`;
+            endGame.textContent = '';
+            gameOver = false;
+        }
+        if (userScore == 5)
+        {
+            gameOver = true;
+            endGame.textContent = 'You won 5 rounds! Play again?'
+        }
+        else if (computerScore == 5)
+        {
+            gameOver = true;
+            endGame.textContent = 'You lost 5 rounds! Play again?'
+        }
+        
     });
 });
