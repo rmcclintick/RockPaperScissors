@@ -48,11 +48,11 @@ function playRound(playerSelection, computerSelection)
 function game()
 {
     //game loop. plays 5 rounds
-    for (let i = 0; i < 5; i++)
-    {
-        let userChoice = prompt('Rock, Paper, or Scissors');
-        console.log(playRound(userChoice, computerPlay()));
-    }
+    // for (let i = 0; i < 5; i++)
+    // {
+    //     let userChoice = prompt('Rock, Paper, or Scissors');
+    //     console.log(playRound(userChoice, computerPlay()));
+    // }
     //display scores and check if player won
     console.log(`Your score: ${userScore} \tComputer's score: ${computerScore}`);
     if (userScore > computerScore) 
@@ -63,4 +63,12 @@ function game()
         console.log('You Lose!');
 }
 
-game();
+// game();
+
+const buttons = document.querySelectorAll('.playerChoice');
+const output = document.querySelector('.round-output');
+buttons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        output.textContent = playRound(e.target.textContent, computerPlay());
+    });
+});
