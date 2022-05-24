@@ -65,7 +65,7 @@ function game()
 
 // game();
 
-const buttons = document.querySelectorAll('.playerChoice');
+const buttons = document.querySelectorAll('.player-choice');
 const output = document.querySelector('.round-output');
 const score = document.querySelector('.score');
 buttons.forEach((button) => {
